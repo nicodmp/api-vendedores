@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: vendas_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: vendas_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - vendas-net
+
+  nest-api:
+    build: .
+    container_name: vendas_api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - vendas-net
+    command: npm run start:dev
+
+  seed:
+    build: .
+    container_name: seed_csv_import
+    depends_on:
+      - postgres
+    networks:
+      - vendas-net
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env
+    command: npm run seed:import-csv
+
+volumes:
+  pgdata:
+
+networks:
+  vendas-net:
