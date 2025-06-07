@@ -18,11 +18,13 @@ Renomeie ou copie o arquivo .env.example para .env:
 
 Edite .env conforme necessário:
 
-`DB_HOST=postgres
+```
+DB_HOST=postgres
 DB_PORT=5432
 DB_USERNAME=postgres
 DB_PASSWORD=postgres
-DB_NAME=vendas_db`
+DB_NAME=vendas_db
+```
 
 Certifique-se de que o arquivo Vendas-API.csv esteja na raiz do projeto.
 
@@ -48,7 +50,8 @@ Esse comando irá:
 
 - Exemplo de resposta:
 
-`{
+```
+{
   "total_vendas_dia": 1200.50,
   "total_acumulado_mes": 8000.75,
   "meta_mensal": 10000,
@@ -57,11 +60,13 @@ Esse comando irá:
   "dias_periodo": 31,
   "dias_restantes": 20,
   "meta_diaria": 99.96
-}`
+}
+```
 
 ### Scripts
 
-`{
+```
+{
   "scripts": {
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -69,7 +74,7 @@ Esse comando irá:
     "seed:import-csv": "ts-node src/seed/import-csv.ts"
   }
 }
-`
+```
 
 - `npm run start:dev`: inicia a API em modo de desenvolvimento.
 
