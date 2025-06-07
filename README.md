@@ -1,6 +1,6 @@
 ## Vendas-API
 
-Este projeto é uma API desenvolvida em NestJS, conectada a um banco PostgreSQL via TypeORM, que realiza o cálculo de desempenho de vendedores com base em um período de apuração específico e exporta resultados em JSON.
+Este projeto é uma API desenvolvida em NestJS, conectada a um banco PostgreSQL via TypeORM, que realiza o cálculo de desempenho de vendedores com base em um período de apuração específico e exporta resultados em JSON. Para os fins desse teste, considerando as datas presentes no csv o período de atuação considerado foi entre 26/04/2025 e 25/05/2025.
 
 ### 🚀 Pré-requisitos
 
